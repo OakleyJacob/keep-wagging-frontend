@@ -18,7 +18,9 @@ import { mockDogs } from './assets/MockDog'
 const App = () => {
 
   const [dogs, setDogs] = useState(mockDogs)
-  
+  const createDog = (dog) => {
+    console.log(dog)
+  }
   return (
     <>
     <Header />
@@ -26,7 +28,7 @@ const App = () => {
       <Route path="/" element={<Home />} />
       <Route path="/dogindex" element={<DogIndex dogs = {dogs}/>} />
       <Route path="/dogshow/:id" element={<DogShow dogs = {dogs}/>} />
-      <Route path="/dognew" element={<DogNew />} />
+      <Route path="/dognew" element={<DogNew createDog={createDog} />} />
       <Route path="/dogedit" element={<DogEdit />} />
       <Route path="/aboutus" element={<AboutUs />} />
       <Route path="/signup" element={<SignUp />} />
