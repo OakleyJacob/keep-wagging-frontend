@@ -10,7 +10,7 @@ const DogIndex = (props) => {
     <>
       <ul>
         {props.dogs?.map((value, index) => {
-         return  <li key = {index} onClick = {() => goToShow(index)}>     
+         return  <li key = {index} onClick = {() => goToShow(index+1)}>     
               <h1>name: {value.name}</h1>
               <h2>age: {value.age}</h2>
               <h3>vaccinated: {value.vaccination_status?'yes':'no'}</h3>
@@ -25,9 +25,3 @@ const DogIndex = (props) => {
 }
 
 export default DogIndex
-// id:1,
-// name:'Rocky',
-// description:'we can fill it later',
-// user_id:1,
-// age:7,
-// vaccination_status:true
