@@ -1,9 +1,13 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 const DogShow = (props) => {
   const { id } = useParams()
   const selectedDog = props.dogs?.find(dog => dog.id === +id)
+  const navigate = useNavigate()
+  const goToEdit = () => {
+    navigate('/dogedit/'+selectedDog.id)
+  }
   return (
     <div>
 
@@ -13,7 +17,7 @@ const DogShow = (props) => {
         <p>description: {selectedDog?.description}</p>
         <img src = {selectedDog?.image} alt = {'photo of '+ selectedDog?.name} ></img>
       
-  
+        <button onClick = {goToEdit}>Edit This Dog</button>
 
     </div>
   )
