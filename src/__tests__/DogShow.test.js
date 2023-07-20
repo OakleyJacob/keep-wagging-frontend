@@ -9,7 +9,7 @@ import { MemoryRouter, Routes, Route } from "react-router-dom";
 describe("<DogShow />", () => {
   beforeEach(() => {
     render(
-      <MemoryRouter initialEntries={["/dogshow/0"]}>
+      <MemoryRouter initialEntries={["/dogshow/1"]}>
         <Routes>
           <Route path="/dogshow/:id" element={<DogShow dogs={mockDogs} />}/>
         </Routes>

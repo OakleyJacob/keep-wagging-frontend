@@ -1,15 +1,18 @@
 import { render, screen } from "@testing-library/react";
-import { BrowserRouter } from "react-router-dom";
-import DogNew from "../pages/DogNew";
+import { BrowserRouter, MemoryRouter, Route, Routes } from "react-router-dom";
+import DogEdit from "../pages/DogEdit";
+import { mockDogs } from "../assets/MockDog";
 
 
 
 describe("<DogNew />", () => {
   beforeEach(() => {
     render(
-    <BrowserRouter>
-      <DogNew />
-    </BrowserRouter>
+        <MemoryRouter initialEntries={["/dogedit/1"]}>
+            <Routes>
+                <Route path="/dogedit/:id" element={<DogEdit dogs={mockDogs} />}/>
+            </Routes>
+       </MemoryRouter>
   )})
 
   it("has name label", () => {
