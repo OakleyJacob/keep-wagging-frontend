@@ -39,4 +39,7 @@ describe("<DogShow />", () => {
   it("has age", () => {
     expect(screen.getByRole('heading', { name: /age: 7/i })).toBeInTheDocument
   })
+  it("has submit button", () => {
+    expect(screen.getByRole('button', {name: /edit this dog/i})).toBeInTheDocument
+  })
 })

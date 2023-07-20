@@ -6,15 +6,15 @@ import { Form, Input, Button, FormGroup, Label} from 'reactstrap'
 
 const DogEdit = (props) => {
   const { id } = useParams()
-  
+
   const selectedDog = props.dogs?.find(dog => dog.id === +id)
 
   const [newDog, setNewDog] = useState(selectedDog)
 
   const handleChange = (e) => {
-    if (e.target.name === "vaccination_status" && newDog.vaccination_status) {
+    if (e.target.name === "vaccination_status" && newDog?.vaccination_status) {
       setNewDog({...newDog,[e.target.name]: false})    
-    } else if (e.target.name === "vaccination_status" && !newDog.vaccination_status){
+    } else if (e.target.name === "vaccination_status" && !newDog?.vaccination_status){
       setNewDog({...newDog,[e.target.name]: true}) 
     } else {
       setNewDog({...newDog,[e.target.name]: e.target.value})
@@ -39,7 +39,7 @@ const DogEdit = (props) => {
             placeholder="Type Dog's Name Here"
             type="text"
             onChange={handleChange}
-            value={newDog.name}
+            value={newDog?.name}
           />
         </FormGroup>
         <FormGroup>
@@ -51,7 +51,7 @@ const DogEdit = (props) => {
             placeholder="Type Dog's Age Here"
             type="number"
             onChange={handleChange}
-            value={newDog.age}
+            value={newDog?.age}
           />
         </FormGroup>
         <FormGroup>
@@ -63,7 +63,7 @@ const DogEdit = (props) => {
             placeholder="Describe Your Buddy Here"
             type="text"
             onChange={handleChange}
-            value={newDog.description}
+            value={newDog?.description}
           />
         </FormGroup>
         <FormGroup>
@@ -85,7 +85,7 @@ const DogEdit = (props) => {
             type="text"
             placeholder="URL Here"
             onChange={handleChange}
-            value={newDog.image}
+            value={newDog?.image}
           />
         </FormGroup>
         <Button onClick={handleSubmit}>
