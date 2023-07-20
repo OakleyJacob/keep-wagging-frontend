@@ -8,6 +8,12 @@ const DogShow = (props) => {
   const goToEdit = () => {
     navigate('/dogedit/'+selectedDog.id)
   }
+
+  const handleDelete = () => {
+    props.deleteDog(selectedDog)
+    navigate('/dogindex/')
+  }
+
   return (
     <div>
 
@@ -18,6 +24,7 @@ const DogShow = (props) => {
         <img src = {selectedDog?.image} alt = {'photo of '+ selectedDog?.name} ></img>
       
         <button onClick = {goToEdit}>Edit This Dog</button>
+        <button onClick = {handleDelete}>Delete</button>
 
     </div>
   )

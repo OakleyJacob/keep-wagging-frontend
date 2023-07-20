@@ -42,4 +42,8 @@ describe("<DogShow />", () => {
   it("has submit button", () => {
     expect(screen.getByRole('button', {name: /edit this dog/i})).toBeInTheDocument
   })
+
+  it("has delete button", () => {
+    expect(screen.getByRole('button', {name: /delete/i})).toBeInTheDocument
+  })
 })
