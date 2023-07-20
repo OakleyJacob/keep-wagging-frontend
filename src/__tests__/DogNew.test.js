@@ -62,20 +62,4 @@ describe("<DogNew />", () => {
       })
     ).toBeInTheDocument
   })
-
-
-//   it("has age label", () => {
-//     expect(screen.getByText(/age/i)).toBeInTheDocument
-//   })
-
-//   it("has age field", () => {
-//     expect(screen.getByPlaceholderText(/How many rings?/i)
-//     ).toBeInTheDocument
-//   })
-//   it("has submit button", () => {
-//     expect(screen.getByRole('button', {
-//         name: /create profile/i
-//       })).toBeInTheDocument
-//   })
-
 })
