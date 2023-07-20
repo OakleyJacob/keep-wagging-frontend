@@ -1,11 +1,11 @@
 import { render, screen } from "@testing-library/react";
-import { BrowserRouter, MemoryRouter, Route, Routes } from "react-router-dom";
+import {MemoryRouter, Route, Routes } from "react-router-dom";
 import DogEdit from "../pages/DogEdit";
 import { mockDogs } from "../assets/MockDog";
 
 
 
-describe("<DogNew />", () => {
+describe("<DogEdit />", () => {
   beforeEach(() => {
     render(
         <MemoryRouter initialEntries={["/dogedit/1"]}>
