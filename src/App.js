@@ -3,6 +3,7 @@ import './App.css'
 import { Routes, Route } from "react-router-dom"
 import Footer from "./components/Footer"
 import Header from "./components/Header"
+import Navigation from './components/Navigation'
 import DogEdit from "./pages/DogEdit"
 import DogIndex from "./pages/DogIndex"
 import DogNew from "./pages/DogNew"
@@ -30,6 +31,7 @@ const App = () => {
   return (
     <>
     <Header />
+    <Navigation/>
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/dogindex" element={<DogIndex dogs = {dogs}/>} />
