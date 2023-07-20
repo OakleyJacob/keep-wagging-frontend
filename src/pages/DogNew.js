@@ -14,8 +14,6 @@ const DogNew = (props) => {
     vaccination_status: false
   })
 
-  // console.log(newDog)
-
   const handleChange = (e) => {
     if (e.target.name === "vaccination_status" && newDog.vaccination_status) {
       setNewDog({...newDog,[e.target.name]: false})    
@@ -35,8 +33,8 @@ const DogNew = (props) => {
 
   return (
     <>
-    <Form>
-    <FormGroup>
+      <Form>
+        <FormGroup>
           <Label for="Dog's-Name">
             Dog's Name
           </Label>
@@ -46,20 +44,20 @@ const DogNew = (props) => {
             type="text"
             onChange={handleChange}
             value={newDog.name}
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label for="Dog's-Age">
-            Dog's Age
-          </Label>
-          <Input
-            name="age"
-            placeholder="Type Dog's Age Here"
-            type="number"
-            onChange={handleChange}
-            value={newDog.age}
-          />
-        </FormGroup>
+        />
+      </FormGroup>
+      <FormGroup>
+        <Label for="Dog's-Age">
+          Dog's Age
+        </Label>
+        <Input
+          name="age"
+          placeholder="Type Dog's Age Here"
+          type="number"
+          onChange={handleChange}
+          value={newDog.age}
+        />
+      </FormGroup>
         <FormGroup>
           <Label for="Dog's-Description">
             Dog's Description
@@ -79,9 +77,7 @@ const DogNew = (props) => {
           <Input
             name="vaccination_status"
             type="checkbox"
-            // checked={true}
             onChange={handleChange}
-            // value={newDog.vaccination_status}
           />
         </FormGroup>
         <FormGroup>
@@ -92,15 +88,14 @@ const DogNew = (props) => {
             name="image"
             type="text"
             placeholder="URL Here"
-
             onChange={handleChange}
             value={newDog.image}
           />
         </FormGroup>
-    <Button onClick={handleSubmit}>
-        Submit
-    </Button>
-</Form>
+        <Button onClick={handleSubmit}>
+          Submit
+        </Button>
+      </Form>
     </>
   )
 }
