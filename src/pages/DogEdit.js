@@ -6,17 +6,11 @@ import { Form, Input, Button, FormGroup, Label} from 'reactstrap'
 
 const DogEdit = (props) => {
   const { id } = useParams()
+  
   const selectedDog = props.dogs?.find(dog => dog.id === +id)
-  const [newDog, setNewDog] = useState({
-    name: "",
-    age: "",
-    description: "",
-    image: "",
-    vaccination_status: false
-  })
-  useEffect(() => {
-    setNewDog(selectedDog)
-  }, [])
+
+  const [newDog, setNewDog] = useState(selectedDog)
+
   const handleChange = (e) => {
     if (e.target.name === "vaccination_status" && newDog.vaccination_status) {
       setNewDog({...newDog,[e.target.name]: false})    

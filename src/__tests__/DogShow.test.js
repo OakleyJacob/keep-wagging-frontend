@@ -17,7 +17,6 @@ describe("<DogShow />", () => {
     )})
 
   it("has photo", () => {
-
     expect(screen.getByRole('img', {
       name: /photo of rocky/i
     })).toBeInTheDocument()
@@ -29,10 +28,7 @@ describe("<DogShow />", () => {
     })).toBeInTheDocument
   })
 
-
-
   it("has user description", () => {
-
     expect(screen.getByText(/description: we can fill it later rocky/i)).toBeInTheDocument
   })
 
