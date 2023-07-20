@@ -13,13 +13,11 @@ describe("<DogNew />", () => {
   )})
 
   it("has name label", () => {
-      expect(screen.getByText(/dog's name/i)).toBeInTheDocument
-    })
+    expect(screen.getByText(/dog's name/i)).toBeInTheDocument
+  })
     
-    
-      it("has name field", () => {
-    expect(screen.getByPlaceholderText(/type dog's name here/i)
-    ).toBeInTheDocument
+  it("has name field", () => {
+    expect(screen.getByPlaceholderText(/type dog's name here/i)).toBeInTheDocument
   })
 
   it("has species label", () => {
@@ -27,8 +25,7 @@ describe("<DogNew />", () => {
   })
 
   it("has species field", () => {
-    expect(screen.getByRole('spinbutton')
-    ).toBeInTheDocument
+    expect(screen.getByRole('spinbutton')).toBeInTheDocument
   })
 
   it("has img label", () => {  
@@ -36,30 +33,26 @@ describe("<DogNew />", () => {
   })
 
   it("has img field", () => {
-    expect(screen.getByPlaceholderText(/describe your buddy here/i)
-    ).toBeInTheDocument
+    expect(screen.getByPlaceholderText(/describe your buddy here/i)).toBeInTheDocument
   })
 
   it("has personality field", () => {
-    expect(screen.getByText(/check here if dog is vaccinated/i)
-    ).toBeInTheDocument
+    expect(screen.getByText(/check here if dog is vaccinated/i)).toBeInTheDocument
   })
+
   it("has favorite activities label", () => {
     expect(screen.getByRole('checkbox')).toBeInTheDocument
   })
 
   it("has favorite activities field", () => {
-    expect(screen.getByText(/dog's image/i)
-    ).toBeInTheDocument
+    expect(screen.getByText(/dog's image/i)).toBeInTheDocument
   })
+
   it("has size label", () => {
     expect(screen.getByPlaceholderText(/url here/i)).toBeInTheDocument
   })
 
   it("has size field", () => {
-    expect(screen.getByRole('button', {
-        name: /submit/i
-      })
-    ).toBeInTheDocument
+    expect(screen.getByRole('button', {name: /submit/i})).toBeInTheDocument
   })
 })

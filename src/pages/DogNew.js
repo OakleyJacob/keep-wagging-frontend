@@ -21,7 +21,6 @@ const DogNew = (props) => {
       setNewDog({...newDog,[e.target.name]: true}) 
     } else {
       setNewDog({...newDog,[e.target.name]: e.target.value})
-
     }
   }
 
@@ -44,20 +43,20 @@ const DogNew = (props) => {
             type="text"
             onChange={handleChange}
             value={newDog.name}
-        />
-      </FormGroup>
-      <FormGroup>
-        <Label for="Dog's-Age">
-          Dog's Age
-        </Label>
-        <Input
-          name="age"
-          placeholder="Type Dog's Age Here"
-          type="number"
-          onChange={handleChange}
-          value={newDog.age}
-        />
-      </FormGroup>
+          />
+        </FormGroup>
+        <FormGroup>
+          <Label for="Dog's-Age">
+            Dog's Age
+          </Label>
+          <Input
+            name="age"
+            placeholder="Type Dog's Age Here"
+            type="number"
+            onChange={handleChange}
+            value={newDog.age}
+          />
+        </FormGroup>
         <FormGroup>
           <Label for="Dog's-Description">
             Dog's Description
