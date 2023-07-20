@@ -4,15 +4,20 @@ import { BrowserRouter } from "react-router-dom"
 
 
 describe("<Navigation />", () => {
-  it("renders without crashing", () => {
+  beforeEach(() => {
     render(
      <BrowserRouter>
         <Navigation />
      </BrowserRouter>
-    )
+     )})
 
-  const navigationPart = screen.getByText("Navigation")
-  expect(navigationPart).toBeInTheDocument()
-  
-  })
+    it("has dogs button", () => {
+      expect(screen.getByRole('button', {name: /dogs/i})).toBeInTheDocument
+    })
+    it("has home button", () => {
+      expect(screen.getByRole('button', {name: /home/i})).toBeInTheDocument
+    })
+    it("has aboutus button", () => {
+      expect(screen.getByRole('button', {name: /aboutus/i})).toBeInTheDocument
+    })
 })
