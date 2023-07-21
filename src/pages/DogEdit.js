@@ -29,7 +29,7 @@ const DogEdit = (props) => {
 
   return (
     <>
-      <Form>
+      <Form className='form'>
         <FormGroup>
           <Label for="Dog's-Name">
             Dog's Name

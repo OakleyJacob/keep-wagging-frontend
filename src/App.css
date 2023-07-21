@@ -1,38 +1,97 @@
-.App {
-  text-align: center;
+/* Navigation-buttons.css */
+
+.dogs {
+  color:navy;
+  border-radius: 50px;
+  border: ridge 3px navy;
+  background-color: bisque;
+  font-famil:initial;
+  position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.about_us {
+  color: navy;
+  border-radius: 50px;
+  border: ridge 3px navy;
+  background-color: bisque;
+  font-family:initial;
+  position: relative;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.home {
+  color:navy;
+  border-radius: 50px;
+  border: ridge 3px navy;
+  background-color: bisque;
+  font-family:initial;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* header-footer-nav */
+
+.navigation {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: fit-content;
+  background-image: linear-gradient(to bottom right, aqua, navy);
+  position: fixed;
+  scroll-margin-bottom: 10px;
+  margin-top: 190px;
+  border-radius: 60px;
+  padding: 18px;
+  box-shadow: 2px 5px 5px 5px rgba(0,0,0,0.2);
 }
 
-.App-link {
-  color: #61dafb;
+.header {
+  background-image: linear-gradient(to bottom right, aqua, navy);
+  text-align: center;
+  padding-bottom: 20px;
+  padding-top: 10px;
+  position: absolute;
+  width: 100%;
+  border-radius: 60px;
+  font-family:initial;
+  color: bisque;
+  margin-top: 5px;
+  box-shadow: 2px 5px 5px 5px rgba(0,0,0,0.2);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.footer {
+  background-image: linear-gradient(to bottom right, aqua, navy);
+  text-align: start;
+  padding-bottom: 20px;
+  padding-top: 10px;
+  position: fixed;
+  width: 100%;
+  border-radius: 60px;
+  font-family:initial;
+  color: bisque;
+  bottom: 0;
+  box-shadow: 2px 5px 5px 5px rgba(0,0,0,0.2);
 }
+
+/* Forms Styling */
+
+form {
+  padding: 150px;
+}
+
+.link {
+  text-decoration: none;
+  color: yellow;
+  margin: 10vh;
+  margin-top: 20vh;
+  
+}
+
+
+.dog-cards {
+  display: flex;
+  flex-direction: row;
+  padding: 350px;
+}
+
+.cards-of-dog {
+  padding: 20px;
+  box-shadow: 2px 5px 5px 5px rgba(0,0,0,0.2);
+}
+

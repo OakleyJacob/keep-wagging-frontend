@@ -16,9 +16,15 @@ const Navigation = () => {
 
   return (
    <>
-   <button onClick={goToDogIndex}>Dogs</button>
-   <button onClick={goToAboutUs}>AboutUs</button>
-   <button onClick={goToHome}>Home</button>
+    <div className='navigation'>
+      <button className= 'home' onClick={goToHome}>Home</button>
+      <br/>
+      <br/>
+      <button className= 'dogs' onClick={goToDogIndex}>Dogs</button>
+      <br/>
+      <br/>
+      <button className= 'about_us' onClick={goToAboutUs}>AboutUs</button>
+      </div>  
    </>
   )
 }
