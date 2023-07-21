@@ -5,7 +5,7 @@
   border-radius: 50px;
   border: ridge 3px navy;
   background-color: bisque;
-  font-famil:initial;
+  font-family:initial;
   position: relative;
 }
 
@@ -83,6 +83,7 @@ form {
   
 }
 
+/* Card Styling */
 
 .dog-cards {
   display: flex;
