@@ -3,7 +3,7 @@ import React from 'react'
 const Header = () => {
   return (
    <>
-   <h1>Header</h1>
+   <h1 className='header'>Welcome to Keep Wagging</h1>
    </>
   )
 }
