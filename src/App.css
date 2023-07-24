@@ -88,6 +88,8 @@ form {
 .dog-cards {
   display: flex;
   flex-direction: row;
+
+  flex-wrap: wrap;
   padding: 350px;
 }
 

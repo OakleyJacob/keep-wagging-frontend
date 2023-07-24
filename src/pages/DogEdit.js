@@ -23,8 +23,8 @@ const DogEdit = (props) => {
 
   const navigate = useNavigate()
   const handleSubmit = () => {
-    props.editDog(newDog)
-    navigate('/dogshow/'+id)
+    props.editDog(newDog, id)
+    navigate(`/dogshow/${id}`)
   }
 
   return (
