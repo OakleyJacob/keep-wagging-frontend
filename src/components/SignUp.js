@@ -3,6 +3,7 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Label, Input, FormG
 
 function SignUp({modal, toggle, signUp}) {
     const [conPassword, setConPassword] = useState('')
+   
     const [userInfo, setUserInfo] = useState({
         email:'',
         password:''
@@ -15,7 +16,8 @@ function SignUp({modal, toggle, signUp}) {
     }
     const handleSubmit = () => {
         if (conPassword === userInfo.password){
-            signUp(userInfo)
+
+            signUp({'user': {email:userInfo.email, password:userInfo.password}})
         }
         else {
             console.log('didnt confirm password')
@@ -59,7 +61,7 @@ function SignUp({modal, toggle, signUp}) {
                 </Label>
                 <Input
                 id="examplePassword"
-                name="password"
+                name="confirmPassword"
                 placeholder="Confirm Password"
                 type="password"
 

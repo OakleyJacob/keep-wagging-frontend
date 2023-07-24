@@ -12,11 +12,11 @@ import Home from "./pages/Home"
 import NotFound from "./pages/NotFound"
 import AboutUs from "./pages/AboutUs"
 
-import mockUsers from './assets/MockUsers'
+
 
 const App = () => {
   const [dogs, setDogs] = useState()
-  const [currentUser, setCurrentUser] = useState(mockUsers[0])
+  const [currentUser, setCurrentUser] = useState(null)
   const navigate = useNavigate()
   useEffect(() => {
     readDogs()
@@ -68,16 +68,72 @@ const App = () => {
     .catch((error) => console.log(error))    
     navigate('/dogindex/')
   }
-  const signUp = (user) => {
-    console.log(user);
+  const signUp = (userInfo) => {
+    console.log(userInfo)
+    fetch(`http://localhost:3000/signup`, {
+      body: JSON.stringify(userInfo),
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      method: "POST"
+    })
+    .then(response => {
+      if(!response.ok) {
+        throw Error(response.statusText)
+      }
+      localStorage.setItem("token", response.headers.get("Authorization"))
+      return response.json()
+    })
+    .then(payload => setCurrentUser(payload))
+    .catch(errors => console.log("login errors:", errors))
+  }
+
+  
+  const signIn = (userInfo) => {
+    console.log(userInfo.email)
+    fetch(`http://localhost:3000/login`, {
+      body: JSON.stringify(userInfo),
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      method: "POST"
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw Error(response.statusText)
+      }
+      // store the token
+      localStorage.setItem("token", response.headers.get("Authorization"))
+      return response.json()
+    })
+    .then(payload => {
+      setCurrentUser(payload)
+    })
+    .catch(error => console.log("login errors: ", error))
+  }
+  const signOut = () => {
+    fetch(`http://localhost:3000/logout`, {
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": localStorage.getItem("token") //retrieve the token
+      },
+      method: "DELETE"
+    })
+    .then(payload => {
+      localStorage.removeItem("token")  // remove the token
+      setCurrentUser(null)
+    })
+    .catch(error => console.log("log out errors: ", error))
 
   }
-  const signIn = (user) => {
-    console.log(user);
-  }
+  useEffect(() => {
+    console.log(currentUser);
+  }, [currentUser])
   return (
     <>
-    <Header signIn = {signIn} signUp = {signUp}/>
+    <Header currentUser = {currentUser} signIn = {signIn} signUp = {signUp} signOut = {signOut}/>
     <Navigation/>
     <Routes>
       <Route path="/" element={<Home />} />
