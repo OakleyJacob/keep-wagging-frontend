@@ -32,18 +32,19 @@ const App = () => {
   }  
   
   const createDog = (dog) => {
+    const createdDog = {...dog,["user_id"]: currentUser.id} 
+    
     fetch("http://localhost:3000/dogs", {
-      body: JSON.stringify(dog),
+      body: JSON.stringify(createdDog),
       method: 'POST',
       headers: {
-        'Content-Type':'application/json'
+        'Content-Type':'application/json'   }
+      })
       .then((response) => response.json())
       .then(() => readDogs())
       .catch((error) => console.log(error))
       }
-    })
-  }
-
+ 
   const editDog = (dog, id) => {
     fetch(`http://localhost:3000/dogs/${id}`, {
       body: JSON.stringify(dog),
