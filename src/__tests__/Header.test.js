@@ -4,15 +4,27 @@ import { BrowserRouter } from "react-router-dom"
 
 
 describe("<Header />", () => {
-  it("renders without crashing", () => {
+  beforeEach(() => {
     render(
      <BrowserRouter>
         <Header />
      </BrowserRouter>
-    )
+    )})
 
-  const headerPart = screen.getByText("Header")
-  expect(headerPart).toBeInTheDocument()
+  it("renders without crashing", () => {
+    screen.logTestingPlaygroundURL()
+      const headerPart = screen.getByRole('heading')
+      expect(headerPart).toBeInTheDocument()
   
   })
+
+  it("has sign up button", () => {
+    expect(screen.getByRole('button', {name: /sign up/i})).toBeInTheDocument
+  })
+
+  it("has sign in button", () => {
+    expect(screen.getByRole('button', {name: /sign in/i})).toBeInTheDocument
+  })
 })
+
+

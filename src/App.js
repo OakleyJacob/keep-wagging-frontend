@@ -11,13 +11,12 @@ import DogShow from "./pages/DogShow"
 import Home from "./pages/Home"
 import NotFound from "./pages/NotFound"
 import AboutUs from "./pages/AboutUs"
-import SignUp from "./pages/SignUp"
-import SignIn from "./pages/SignIn"
-import { mockDogs } from './assets/MockDog'
 
+import mockUsers from './assets/MockUsers'
 
 const App = () => {
   const [dogs, setDogs] = useState()
+  const [currentUser, setCurrentUser] = useState(mockUsers[0])
   const navigate = useNavigate()
   useEffect(() => {
     readDogs()
@@ -67,11 +66,18 @@ const App = () => {
     .then((response) => response.json())
     .then(() => readDogs())
     .catch((error) => console.log(error))    
-    navigate('/dogindex/')}
-  
+    navigate('/dogindex/')
+  }
+  const signUp = (user) => {
+    console.log(user);
+
+  }
+  const signIn = (user) => {
+    console.log(user);
+  }
   return (
     <>
-    <Header />
+    <Header signIn = {signIn} signUp = {signUp}/>
     <Navigation/>
     <Routes>
       <Route path="/" element={<Home />} />
@@ -80,8 +86,7 @@ const App = () => {
       <Route path="/dognew" element={<DogNew createDog={createDog} />} />
       <Route path="/dogedit/:id" element={<DogEdit dogs = {dogs} editDog = {editDog}/>} />
       <Route path="/aboutus" element={<AboutUs />} />
-      <Route path="/signup" element={<SignUp />} />
-      <Route path="/signin" element={<SignIn />} />
+
       <Route path="*" element={<NotFound />} />
     </Routes>
     <Footer />
