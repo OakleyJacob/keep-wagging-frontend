@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './App.css'
-import { Routes, Route } from "react-router-dom"
+import { Routes, Route, useNavigate } from "react-router-dom"
 import Footer from "./components/Footer"
 import Header from "./components/Header"
 import Navigation from './components/Navigation'
@@ -17,17 +17,63 @@ import { mockDogs } from './assets/MockDog'
 
 
 const App = () => {
+  const [dogs, setDogs] = useState()
+  const navigate = useNavigate()
+  useEffect(() => {
+    readDogs()
 
-  const [dogs, setDogs] = useState(mockDogs)
+  }, [])
+
+  const readDogs = () => {
+    fetch("http://localhost:3000/dogs")
+    .then((response) => response.json())
+    .then((payload) => {
+      setDogs(payload)
+    })
+    .catch((error) => console.log(error))
+  }  
+  
   const createDog = (dog) => {
-    console.log(dog)
+    fetch("http://localhost:3000/dogs", {
+      body: JSON.stringify(dog),
+      method: 'POST',
+      headers: {
+        'Content-Type':'application/json'
+      .then((response) => response.json())
+      .then(() => readDogs())
+      .catch((error) => console.log(error))
+     
+    }
+    } 
+    )}
+
+  const editDog = (dog, id) => {
+    delete dog.user_id
+    delete dog.created_at
+    delete dog.updated_at
+    fetch(`http://localhost:3000/dogs/${id}`, {
+      body: JSON.stringify(dog),
+      method: 'PATCH',
+      headers: {
+        'Content-Type':'application/json'
+      }
+    })
+    .then((response) => response.json())
+    .then(() => readDogs())
+    .catch((error) => console.log(error))
   }
-  const editDog = (dog) => {
-    console.log(dog)
-  }
-  const deleteDog = (dog) => {
-    console.log(dog)
-  }
+  const deleteDog = (dog, id) => {
+    fetch(`http://localhost:3000/dogs/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type':'application/json'
+      }
+    })
+    .then((response) => response.json())
+    .then(() => readDogs())
+    .catch((error) => console.log(error))    
+    navigate('/dogindex/')}
+  
   return (
     <>
     <Header />

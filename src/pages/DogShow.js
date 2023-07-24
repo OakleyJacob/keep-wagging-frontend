@@ -10,8 +10,8 @@ const DogShow = (props) => {
   }
 
   const handleDelete = () => {
-    props.deleteDog(selectedDog)
-    navigate('/dogindex/')
+    props.deleteDog(selectedDog, id)
+    
   }
 
   return (
