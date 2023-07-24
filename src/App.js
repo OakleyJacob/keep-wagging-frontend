@@ -21,9 +21,11 @@ const App = () => {
   useEffect(() => {
     readDogs()
   }, [])
+  
+  const url = "https://dogpoundheavenbackend.onrender.com"
 
   const readDogs = () => {
-    fetch("http://localhost:3000/dogs")
+    fetch(`${url}/dogs`)
     .then((response) => response.json())
     .then((payload) => {
       setDogs(payload)
@@ -34,7 +36,7 @@ const App = () => {
   const createDog = (dog) => {
     const createdDog = {...dog,["user_id"]: currentUser.id} 
     
-    fetch("http://localhost:3000/dogs", {
+    fetch(`${url}/dogs`, {
       body: JSON.stringify(createdDog),
       method: 'POST',
       headers: {
@@ -46,7 +48,7 @@ const App = () => {
       }
  
   const editDog = (dog, id) => {
-    fetch(`http://localhost:3000/dogs/${id}`, {
+    fetch(`${url}/dogs/${id}`, {
       body: JSON.stringify(dog),
       method: 'PATCH',
       headers: {
@@ -58,7 +60,7 @@ const App = () => {
     .catch((error) => console.log(error))
   }
   const deleteDog = (dog, id) => {
-    fetch(`http://localhost:3000/dogs/${id}`, {
+    fetch(`${url}/dogs/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type':'application/json'
@@ -71,7 +73,7 @@ const App = () => {
   }
   const signUp = (userInfo) => {
     console.log(userInfo)
-    fetch(`http://localhost:3000/signup`, {
+    fetch(`${url}/signup`, {
       body: JSON.stringify(userInfo),
       headers: {
         "Content-Type": "application/json",
@@ -93,7 +95,7 @@ const App = () => {
   
   const signIn = (userInfo) => {
     console.log(userInfo.email)
-    fetch(`http://localhost:3000/login`, {
+    fetch(`${url}/login`, {
       body: JSON.stringify(userInfo),
       headers: {
         "Content-Type": "application/json",
@@ -115,7 +117,7 @@ const App = () => {
     .catch(error => console.log("login errors: ", error))
   }
   const signOut = () => {
-    fetch(`http://localhost:3000/logout`, {
+    fetch(`${url}/logout`, {
       headers: {
         "Content-Type": "application/json",
         "Authorization": localStorage.getItem("token") //retrieve the token
