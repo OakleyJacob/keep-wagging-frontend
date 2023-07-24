@@ -15,7 +15,7 @@ const DogShow = (props) => {
   }
 
   return (
-    <div className='card'>
+    <div className='card' >
 
         <h1>name: {selectedDog?.name}</h1>
         <h2>age: {selectedDog?.age}</h2>

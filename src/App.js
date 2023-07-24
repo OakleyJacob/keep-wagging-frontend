@@ -48,9 +48,6 @@ const App = () => {
     )}
 
   const editDog = (dog, id) => {
-    delete dog.user_id
-    delete dog.created_at
-    delete dog.updated_at
     fetch(`http://localhost:3000/dogs/${id}`, {
       body: JSON.stringify(dog),
       method: 'PATCH',
