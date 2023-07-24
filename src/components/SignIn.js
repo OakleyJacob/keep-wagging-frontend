@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, FormGroup, Label, Input } from 'reactstrap';
 
-function SignIn({modal, toggle, signIn}) {
+function SignIn({modal, toggle, signIn, currentUser}) {
     const [userInfo, setUserInfo] = useState({
         email:'',
         password:''
@@ -11,9 +11,16 @@ function SignIn({modal, toggle, signIn}) {
     }
     const handleSubmit = () => {
  
-            signIn(userInfo)
+        signIn({'user': {email:userInfo.email, password:userInfo.password}})
+   
        
     }
+    useEffect(() => {
+        if (currentUser != null){
+            toggle()
+            console.log('toggle');
+        }
+    }, [currentUser])
   return (
     <div>
 
