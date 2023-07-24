@@ -21,7 +21,6 @@ const App = () => {
   const navigate = useNavigate()
   useEffect(() => {
     readDogs()
-
   }, [])
 
   const readDogs = () => {
@@ -42,10 +41,9 @@ const App = () => {
       .then((response) => response.json())
       .then(() => readDogs())
       .catch((error) => console.log(error))
-     
-    }
-    } 
-    )}
+      }
+    })
+  }
 
   const editDog = (dog, id) => {
     fetch(`http://localhost:3000/dogs/${id}`, {
