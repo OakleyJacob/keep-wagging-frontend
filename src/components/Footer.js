@@ -1,13 +1,18 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Nav, NavLink, NavItem } from 'reactstrap'
 
 const Footer = () => {
   return (
     <>
-    <h1 className='footer'>
-      <Link className='link'> Donate
-      </Link>
-    </h1>
+      <h1 className='footer'>
+        <Nav className='nav-header'>
+          <NavItem>
+            <NavLink href='/donations' active>
+              Donate
+            </NavLink>
+          </NavItem>
+        </Nav>
+      </h1>
     </>
   )
 }

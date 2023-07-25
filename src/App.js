@@ -11,6 +11,7 @@ import DogShow from "./pages/DogShow"
 import Home from "./pages/Home"
 import NotFound from "./pages/NotFound"
 import AboutUs from "./pages/AboutUs"
+import Donations from './pages/Donations'
 
 
 
@@ -145,6 +146,7 @@ const App = () => {
       <Route path="/dognew" element={<DogNew createDog={createDog} />} />
       <Route path="/dogedit/:id" element={<DogEdit dogs = {dogs} editDog = {editDog}/>} />
       <Route path="/aboutus" element={<AboutUs />} />
+      <Route path="/donations" element={<Donations />} />
 
       <Route path="*" element={<NotFound />} />
     </Routes>
