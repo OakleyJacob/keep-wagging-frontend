@@ -33,11 +33,12 @@
   flex-direction: column;
   width: fit-content;
   position: fixed;
+  top: 0;
   scroll-margin-bottom: 10px;
   margin-top: 20%;
   z-index: 100;
   background-color: rgba(0, 0, 0, 0.4);
-  height: 170px;
+
   border-radius: 100px;
   margin-left: 20px;
 }
@@ -48,9 +49,10 @@
   width: 100%;
   padding-top: 15px;
   padding-bottom: 20px;
-  position: fixed;
+  position: absolute;
   z-index: 100;
   font-family: 'Bitter', serif;
+  top: 0px;
 }
 
 .nav-header {
@@ -67,7 +69,7 @@
 
 .footer {
   text-align: start;
-  padding-bottom: 20px;
+  bottom: 0;
   padding-top: 10px;
   position: fixed;
   width: 100%;
@@ -97,17 +99,23 @@ form {
 /* Card Styling */
 
 .dog-cards {
-  /* display: flex;
+  display: flex;
   flex-direction: row;
 
   flex-wrap: wrap;
-  padding: 350px; */
-  
+
+  width: 80%;
+  margin:auto;
+  margin-top: 10%;
+  margin-bottom: 15%
 }
 
 .cards-of-dog {
   padding: 20px;
   box-shadow: 2px 5px 5px 5px rgba(0,0,0,0.2);
+  margin: 15px;
+  width: 20%;
+  
 }
 
 .card-text {
@@ -120,11 +128,13 @@ form {
 }
 
 
-/* .picture{
-  border-radius: 1800px;
-} */
+.bigcard{
+  margin-top: 100px;
 
-/* Home Page */
+ margin-left: 50%;
+ transform: translateX(-25%)
+
+}
 
 .home-page {
   width: 100%;
@@ -142,9 +152,9 @@ form {
 }
 
 .donations-form{
-display: flex;
-justify-content: center;
-padding-top: 43%;
+  display: flex;
+  justify-content: center;
+  padding-top: 43%;
 }
 
 .video{
@@ -168,4 +178,12 @@ padding-top: 43%;
   color: black;
   padding-left: 30px;
   font-size: 25px;
+}
+
+.notFound{
+  margin-top: 5rem;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 50px;
+  z-index: 150;
 }

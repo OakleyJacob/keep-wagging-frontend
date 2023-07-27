@@ -1,6 +1,6 @@
 import React from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
-import { Card, CardBody, CardTitle, CardSubtitle, Button, CardText } from 'reactstrap'
+import { NavLink, useNavigate, useParams } from 'react-router-dom'
+import { Card, CardBody, CardTitle, CardSubtitle,CardText, Button } from 'reactstrap'
 
 const DogShow = (props) => {
   const { id } = useParams()
@@ -11,13 +11,15 @@ const DogShow = (props) => {
   }
 
   const handleDelete = () => {
-    props.deleteDog(selectedDog, id)
+    props.deleteDog(id)
+
     
   }
 
   return (
-    <div className='card' >
-      <Card style={{width: '20rem' }}>
+    <div className='bigcard' >
+
+      <Card style={{width: '20rem', boxShadow: '2px 5px 5px 5px rgba(0,0,0,0.2)' }}>
         <img  alt={'photo of '+ selectedDog?.name} src={selectedDog?.image}/>
         <CardBody>
           <CardTitle tag="h5">
@@ -32,12 +34,13 @@ const DogShow = (props) => {
           <CardText>
           Vaccinated: {selectedDog?.vaccination_status?'yes':'no'}
           </CardText>
-          <button onClick = {goToEdit}>Edit This Dog</button>
-        <button onClick = {handleDelete}>Delete</button>
-
+          <Button onClick = {goToEdit}>Edit Dog</Button>
+          <NavLink to={'/dogindex'} reloadDocument>
+            <Button style = {{marginLeft: '97px'}}onClick = {handleDelete}>Adopt Me!</Button>
+          </NavLink>
         </CardBody>
       </Card>
-
+      
     </div>
   )
 }

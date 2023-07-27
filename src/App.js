@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './App.css'
 import { Routes, Route, useNavigate } from "react-router-dom"
-import Footer from "./components/Footer"
+
 import Header from "./components/Header"
 import Navigation from './components/Navigation'
 import DogEdit from "./pages/DogEdit"
@@ -62,8 +62,8 @@ const App = () => {
     .then(() => readDogs())
     .catch((error) => console.log(error))
   }
-  const deleteDog = (dog, id) => {
-    fetch(`${url}/dogs/${id}`, {
+  const deleteDog = async(id) => {
+    await fetch(`${url}/dogs/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type':'application/json'
@@ -72,7 +72,7 @@ const App = () => {
     .then((response) => response.json())
     .then(() => readDogs())
     .catch((error) => console.log(error))    
-    navigate('/dogindex/')
+
   }
   const signUp = (userInfo) => {
     console.log(userInfo)
@@ -152,7 +152,7 @@ const App = () => {
 
       <Route path="*" element={<NotFound />} />
     </Routes>
-    <Footer />
+    
   </>
 
 )}
