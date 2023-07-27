@@ -6,10 +6,10 @@ const Footer = () => {
     <>
       <h1 className='footer'>
         <Nav className='nav-header'>
-          <NavItem>
-            <NavLink href='/donations' active>
+          <NavItem className="donate-footer">
+          <NavLink className='donate-footer'  href='/donations' active>
               Donate
-            </NavLink>
+          </NavLink>
           </NavItem>
         </Nav>
       </h1>

@@ -2,10 +2,10 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Nav, NavItem, NavLink } from 'reactstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHome, faDog, faPeopleGroup, faShirt } from '@fortawesome/free-solid-svg-icons'
+import { faHome, faDog, faPeopleGroup, faPlus } from '@fortawesome/free-solid-svg-icons'
 
 
-const Navigation = () => {
+const Navigation = (props) => {
 
   const navigate = useNavigate()
   const goToDogIndex = () => {
@@ -17,39 +17,41 @@ const Navigation = () => {
   const goToHome = () => {
     navigate("/")
   }
+  const goToDogNew = () => {
+    navigate("/dognew")
+  }
 
   return (
    <>
     <div className='navigation'>
       <Nav  vertical>
         <NavItem>
-          <NavLink exact="true" activeclassname="active" href="/">
+          <NavLink exact="true" activeclassname="active" onClick={goToHome}>
 
             <FontAwesomeIcon icon={faHome} color="orange" />
 
           </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink exact="true" activeclassname="active" href="/dogindex">
+          <NavLink exact="true" activeclassname="active" onClick={goToDogIndex}>
 
             <FontAwesomeIcon icon={ faDog } color="red" />
 
           </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink exact="true" activeclassname="active" href="/aboutus">
+          <NavLink exact="true" activeclassname="active" onClick={goToAboutUs}>
 
             <FontAwesomeIcon icon={faPeopleGroup} color="purple" />
 
           </NavLink>
         </NavItem>
-        <NavItem>
-           <NavLink exact="true" activeclassname="active" href="/">
+       {props.currentUser!== null?<> <NavItem>
+           <NavLink exact="true" activeclassname="active" onClick={goToDogNew}>
 
-            <FontAwesomeIcon icon={faShirt} color="green" />
-
-          </NavLink>
-        </NavItem>
+           <FontAwesomeIcon icon={faPlus} style = {{margin:"auto"}} />
+          </NavLink> 
+        </NavItem> </> :null}
       </Nav>
     </div>
    </>

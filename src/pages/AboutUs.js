@@ -3,7 +3,7 @@ import { Card, CardBody, CardTitle, Button,CardSubtitle, CardText, CardGroup, Ca
 
 const AboutUs = () => {
   return (
-    <>
+    <div>
       <CardGroup className='card-group'>
         <Card>
           <CardImg
@@ -81,7 +81,7 @@ const AboutUs = () => {
           </CardBody>
         </Card>
       </CardGroup>
-    </>
+      </div>
   )
 }
 

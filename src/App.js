@@ -23,8 +23,10 @@ const App = () => {
     readDogs()
   }, [])
   
-  const url = "https://dogpoundheavenbackend.onrender.com"
-
+  const urlDeployed = "https://dogpoundheavenbackend.onrender.com"
+  const url = "http://localhost:3000"
+  
+  
   const readDogs = () => {
     fetch(`${url}/dogs`)
     .then((response) => response.json())
@@ -132,13 +134,13 @@ const App = () => {
     .catch(error => console.log("log out errors: ", error))
 
   }
-  useEffect(() => {
-    console.log(currentUser);
-  }, [currentUser])
+  // useEffect(() => {
+  //   console.log(currentUser);
+  // }, [currentUser])
   return (
     <>
     <Header currentUser = {currentUser} signIn = {signIn} signUp = {signUp} signOut = {signOut}/>
-    <Navigation/>
+    <Navigation currentUser = {currentUser}/>
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/dogindex" element={<DogIndex dogs = {dogs}/>} />
@@ -156,6 +158,9 @@ const App = () => {
 )}
 
 export default App
+
+
+
 
 
 
