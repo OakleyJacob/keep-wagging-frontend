@@ -7,9 +7,10 @@ const NotFound = () => {
   return (
     <>
   
-    <div className = 'notFound'>   <img height = '500px' src = {notFound} alt = '404'/>
-    <br/>You seem to have lost your way!<br/>
-    <Button onClick = {() => {navigate('/')}}> Click here to return home!</Button></div>
+      <div className = 'notFound'>   <img height = '500px' src = {notFound} alt = '404'/>
+        <br/>You seem to have lost your way!<br/>
+        <Button onClick = {() => {navigate('/')}}> Click here to return home!</Button>
+      </div>
     </>
   )
 }

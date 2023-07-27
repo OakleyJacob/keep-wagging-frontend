@@ -134,9 +134,7 @@ const App = () => {
     .catch(error => console.log("log out errors: ", error))
 
   }
-  // useEffect(() => {
-  //   console.log(currentUser);
-  // }, [currentUser])
+
   return (
     <>
     <Header currentUser = {currentUser} signIn = {signIn} signUp = {signUp} signOut = {signOut}/>
