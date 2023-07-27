@@ -18,7 +18,7 @@ import Donations from './pages/Donations'
 const App = () => {
   const [dogs, setDogs] = useState()
   const [currentUser, setCurrentUser] = useState(null)
-  const navigate = useNavigate()
+
   useEffect(() => {
     readDogs()
   }, [])
@@ -62,8 +62,8 @@ const App = () => {
     .then(() => readDogs())
     .catch((error) => console.log(error))
   }
-  const deleteDog = async(id) => {
-    await fetch(`${url}/dogs/${id}`, {
+  const deleteDog = (id) => {
+    fetch(`${url}/dogs/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type':'application/json'
