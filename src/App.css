@@ -37,14 +37,13 @@
   scroll-margin-bottom: 10px;
   margin-top: 20%;
   z-index: 100;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgb(229, 229, 181);
   border-radius: 100px;
   margin-left: 20px;
 }
 
 .header {
   text-align: center;
-  background-color: rgba(218, 209, 209, 0.081);
   width: 100%;
   padding-top: 15px;
   padding-bottom: 20px;
@@ -52,6 +51,7 @@
   z-index: 100;
   font-family: 'Bitter', serif;
   top: 0px;
+  background-color: rgb(229, 229, 181);
 }
 
 .nav-header {
@@ -65,20 +65,7 @@
   
 }
 
-.footer {
-  text-align: start;
-  bottom: 0;
-  padding-top: 10px;
-  position: fixed;
-  width: 100%;
-  background-color: rgba(218, 209, 209, 0.081);
-  font-family:initial;
-  color: bisque;
-  bottom: 0;
-  opacity: 40%;
-  z-index: 100;
-  font-family: 'Bitter', serif;
-}
+
 
 /* Forms Styling */
 
@@ -162,13 +149,21 @@ form {
 
 .sign-up{
   color: black;
-  padding-right: 30px;
   font-size: 25px;
+  position: absolute;
+  top: 0;
+  right: 100px;
+  margin: 5px;
 }
 .sign-in{
   color: black;
   padding-left: 30px;
   font-size: 25px;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  margin: 5px;
+ 
 }
 
 .donate-footer{
