@@ -46,4 +46,3 @@ const DogShow = (props) => {
 }
 
 export default DogShow
-// className = "picture"

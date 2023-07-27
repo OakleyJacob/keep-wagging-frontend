@@ -38,7 +38,6 @@
   margin-top: 20%;
   z-index: 100;
   background-color: rgba(0, 0, 0, 0.4);
-
   border-radius: 100px;
   margin-left: 20px;
 }
@@ -60,7 +59,6 @@
   justify-content: end;
   padding-right: 100px;
   padding-top: 10px;
-  /* margin-top: -55px; */
   font-family: 'Bitter', serif;
   padding-left: 30px;
   font-size: 25px;
