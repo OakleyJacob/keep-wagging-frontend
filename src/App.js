@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './App.css'
 import { Routes, Route, useNavigate } from "react-router-dom"
-import Footer from "./components/Footer"
+
 import Header from "./components/Header"
 import Navigation from './components/Navigation'
 import DogEdit from "./pages/DogEdit"
@@ -18,13 +18,15 @@ import Donations from './pages/Donations'
 const App = () => {
   const [dogs, setDogs] = useState()
   const [currentUser, setCurrentUser] = useState(null)
-  const navigate = useNavigate()
+
   useEffect(() => {
     readDogs()
   }, [])
   
-  const url = "https://dogpoundheavenbackend.onrender.com"
-
+  const urlDeployed = "https://dogpoundheavenbackend.onrender.com"
+  const url = "http://localhost:3000"
+  
+  
   const readDogs = () => {
     fetch(`${url}/dogs`)
     .then((response) => response.json())
@@ -60,7 +62,7 @@ const App = () => {
     .then(() => readDogs())
     .catch((error) => console.log(error))
   }
-  const deleteDog = (dog, id) => {
+  const deleteDog = (id) => {
     fetch(`${url}/dogs/${id}`, {
       method: 'DELETE',
       headers: {
@@ -70,7 +72,7 @@ const App = () => {
     .then((response) => response.json())
     .then(() => readDogs())
     .catch((error) => console.log(error))    
-    navigate('/dogindex/')
+
   }
   const signUp = (userInfo) => {
     console.log(userInfo)
@@ -132,13 +134,11 @@ const App = () => {
     .catch(error => console.log("log out errors: ", error))
 
   }
-  useEffect(() => {
-    console.log(currentUser);
-  }, [currentUser])
+
   return (
     <>
     <Header currentUser = {currentUser} signIn = {signIn} signUp = {signUp} signOut = {signOut}/>
-    <Navigation/>
+    <Navigation currentUser = {currentUser}/>
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/dogindex" element={<DogIndex dogs = {dogs}/>} />
@@ -150,12 +150,15 @@ const App = () => {
 
       <Route path="*" element={<NotFound />} />
     </Routes>
-    <Footer />
+    
   </>
 
 )}
 
 export default App
+
+
+
 
 
 

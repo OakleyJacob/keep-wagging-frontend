@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Card, CardBody, CardSubtitle, CardTitle } from 'reactstrap'
 import { NavLink } from 'react-router-dom'
 
 const DogIndex = ({dogs}) => {
+
   return (
     <div className='dog-cards'>
       {dogs?.map((dog, index) => {
