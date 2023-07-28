@@ -141,7 +141,7 @@ const App = () => {
     <Navigation currentUser = {currentUser}/>
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/dogindex" element={<DogIndex dogs = {dogs}/>} />
+      <Route path="/dogindex" element={<DogIndex dogs = {dogs} readDogs = {readDogs}/>} />
       <Route path="/dogshow/:id" element={<DogShow dogs = {dogs} deleteDog = {deleteDog}/>} />
       <Route path="/dognew" element={<DogNew createDog={createDog} />} />
       <Route path="/dogedit/:id" element={<DogEdit dogs = {dogs} editDog = {editDog}/>} />

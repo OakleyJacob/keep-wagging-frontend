@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink, useNavigate, useParams } from 'react-router-dom'
+import { Link, NavLink, useNavigate, useParams } from 'react-router-dom'
 import { Card, CardBody, CardTitle, CardSubtitle,CardText, Button } from 'reactstrap'
 
 const DogShow = (props) => {
@@ -9,10 +9,12 @@ const DogShow = (props) => {
   const goToEdit = () => {
     navigate('/dogedit/'+selectedDog.id)
   }
-
+  const goToIndex = () => {
+    navigate('/dogindex/')
+  }
   const handleDelete = () => {
     props.deleteDog(id)
-
+    navigate('/dogindex/')
     
   }
 
@@ -34,10 +36,10 @@ const DogShow = (props) => {
           <CardText>
           Vaccinated: {selectedDog?.vaccination_status?'yes':'no'}
           </CardText>
-          <Button onClick = {goToEdit}>Edit Dog</Button>
-          <NavLink to={'/dogindex'} reloadDocument>
-            <Button style = {{marginLeft: '97px'}}onClick = {handleDelete}>Adopt Me!</Button>
-          </NavLink>
+          <Button color="success" onClick = {goToEdit}>Edit Dog</Button>
+          <Link to = '/dogindex'>
+          <Button color="success" onClick = {handleDelete} style = {{marginLeft: '87px'}}  >Adopt Me!</Button>
+          </Link>
         </CardBody>
       </Card>
       

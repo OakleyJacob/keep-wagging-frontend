@@ -86,9 +86,7 @@ form {
 .dog-cards {
   display: flex;
   flex-direction: row;
-
   flex-wrap: wrap;
-
   width: 80%;
   margin:auto;
   margin-top: 10%;
@@ -126,6 +124,7 @@ form {
   height: 100%;
   align-items: center;
   margin: auto;
+  background-color: rgb(229, 229, 181);
 }
 
 /* Donations Page */
