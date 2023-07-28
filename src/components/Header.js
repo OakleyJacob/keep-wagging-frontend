@@ -27,17 +27,17 @@ const Header = (props) => {
         <Nav className='nav-header'>
           {props.currentUser === null?<>
           <NavItem>
-              <Button className='sign-up' color="primary" onClick={toggleSignUp}>
+              <Button className='sign-up' color="success" onClick={toggleSignUp}>
                 Sign Up
               </Button >
           </NavItem>
           <NavItem>
-              <Button className='sign-in' color="primary" onClick={toggleSignIn}>
+              <Button className='sign-in' color="success" onClick={toggleSignIn}>
                 Sign In
               </Button >
           </NavItem></>:
           <NavItem>
-              <Button  className='sign-in' color="primary" onClick={props.signOut}>
+              <Button  className='sign-in' color="success" onClick={props.signOut}>
                 Sign Out
               </Button >
           </NavItem>}
