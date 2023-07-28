@@ -32,7 +32,7 @@ const AboutUs = () => {
           </div>
           <div className = 'myCard__side myCard__side--back'>
             <span className = 'textBack'>
-              miguel type here          
+              As a Project Manager I was responsible for managing the workflow of the team, and maintaining the work and team work enviroment professional and enjoyble.         
             </span>
           </div>
         </div>
@@ -46,7 +46,7 @@ const AboutUs = () => {
           </div>
           <div className = 'myCard__side myCard__side--back'> 
             <span className = 'textBack'>
-              paul type here
+              As a Design Lead I was responsible for implementing the visual side of the website. With creativity and experience, brought life to the webpage.
             </span>
             </div>
           </div>

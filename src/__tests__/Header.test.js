@@ -12,7 +12,6 @@ describe("<Header />", () => {
     )})
 
   it("renders without crashing", () => {
-    screen.logTestingPlaygroundURL()
       const headerPart = screen.getByRole('heading')
       expect(headerPart).toBeInTheDocument()
   

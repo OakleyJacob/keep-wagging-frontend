@@ -26,28 +26,28 @@ const Navigation = (props) => {
     <div className='navigation'>
       <Nav  vertical>
         <NavItem>
-          <NavLink exact="true" activeclassname="active" onClick={goToHome}>
+          <NavLink data-testid='home-icon' exact="true" activeclassname="active" onClick={goToHome}>
 
             <FontAwesomeIcon icon={faHome} color="orange" />
 
           </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink exact="true" activeclassname="active" onClick={goToDogIndex}>
+          <NavLink data-testid='home-icon2' exact="true" activeclassname="active" onClick={goToDogIndex}>
 
             <FontAwesomeIcon icon={ faDog } color="red" />
 
           </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink exact="true" activeclassname="active" onClick={goToAboutUs}>
+          <NavLink data-testid='home-icon3' exact="true" activeclassname="active" onClick={goToAboutUs}>
 
             <FontAwesomeIcon icon={faPeopleGroup} color="purple" />
 
           </NavLink>
         </NavItem>
        {props.currentUser!== null?<> <NavItem>
-           <NavLink exact="true" activeclassname="active" onClick={goToDogNew}>
+           <NavLink data-testid='home-icon4' exact="true" activeclassname="active" onClick={goToDogNew}>
 
            <FontAwesomeIcon icon={faPlus} style = {{margin:"auto"}} />
           </NavLink> 
