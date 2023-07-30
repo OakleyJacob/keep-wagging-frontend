@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, NavLink, useNavigate, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { Card, CardBody, CardTitle, CardSubtitle,CardText, Button } from 'reactstrap'
 
 const DogShow = (props) => {
@@ -8,9 +8,6 @@ const DogShow = (props) => {
   const navigate = useNavigate()
   const goToEdit = () => {
     navigate('/dogedit/'+selectedDog.id)
-  }
-  const goToIndex = () => {
-    navigate('/dogindex/')
   }
   const handleDelete = () => {
     props.deleteDog(id)

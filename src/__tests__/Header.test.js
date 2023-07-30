@@ -14,9 +14,8 @@ describe("<Header />", () => {
   it("renders without crashing", () => {
       const headerPart = screen.getByRole('heading')
       expect(headerPart).toBeInTheDocument()
-  
   })
-
+  
   it("has sign up button", () => {
     expect(screen.getByRole('button', {name: /sign up/i})).toBeInTheDocument
   })

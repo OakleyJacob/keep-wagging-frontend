@@ -16,8 +16,8 @@ describe("<Header />", () => {
         name: /sign on up!/i
       })
       expect(headerPart).toBeInTheDocument()
-  
   })
+  
   it("has email label", () => {
     expect(screen.getByText(/email/i)).toBeInTheDocument
   })

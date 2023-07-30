@@ -5,10 +5,8 @@ import { Nav, NavLink, NavItem, Button } from 'reactstrap';
 
 const Header = (props) => {
   const [signUpModal, setSignUpModal] = useState(false);
-
   const toggleSignUp = () => setSignUpModal(!signUpModal);
   const [signInModal, setSignInModal] = useState(false);
-
   const toggleSignIn = () => setSignInModal(!signInModal);
    
   useEffect(() => {

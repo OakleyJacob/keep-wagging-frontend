@@ -19,6 +19,8 @@ const App = () => {
   const [dogs, setDogs] = useState()
   const [donations, setDonations] = useState()
   const [currentUser, setCurrentUser] = useState(null)
+ 
+  const navigate = useNavigate()
 
   useEffect(() => {
     readDogs()
@@ -134,7 +136,7 @@ const App = () => {
       setCurrentUser(null)
     })
     .catch(error => console.log("log out errors: ", error))
-
+    navigate('/')
   }
   const getDonations = () => {
     fetch(`${url}/donations`).then((response) => response.json())

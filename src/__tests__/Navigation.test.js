@@ -14,13 +14,20 @@ describe("<Navigation />", () => {
     it("has dogs button", () => {
       expect(screen.getByTestId('home-icon')).toBeInTheDocument
     })
+    
     it("has home button", () => {
       expect(screen.getByTestId('home-icon2')).toBeInTheDocument
     })
+    
     it("has aboutus button", () => {
       expect(screen.getByTestId('home-icon3')).toBeInTheDocument
     })
-    it("has aboutus button", () => {
+    
+    it("has add dog button", () => {
       expect(screen.getByTestId('home-icon4')).toBeInTheDocument
+    })
+
+    it("has donate button", () => {
+      expect(screen.getByTestId('home-icon5')).toBeInTheDocument
     })
 })

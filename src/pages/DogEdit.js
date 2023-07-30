@@ -6,11 +6,8 @@ import { Form, Input, Button, FormGroup, Label} from 'reactstrap'
 
 const DogEdit = (props) => {
   const { id } = useParams()
-
   const selectedDog = props.dogs?.find(dog => dog.id === +id)
-
   const [newDog, setNewDog] = useState(selectedDog)
-
   const handleChange = (e) => {
     if (e.target.name === "vaccination_status" && newDog?.vaccination_status) {
       setNewDog({...newDog,[e.target.name]: false})    
@@ -20,14 +17,12 @@ const DogEdit = (props) => {
       setNewDog({...newDog,[e.target.name]: e.target.value})
     }
   }
-
   const navigate = useNavigate()
   const handleSubmit = () => {
     props.editDog(newDog, id)
     navigate(`/dogshow/${id}`)
   }
-
-  return (
+ return (
     <>
       <Form className='form'>
         <FormGroup>

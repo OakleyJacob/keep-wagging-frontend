@@ -13,7 +13,7 @@ describe("<Home />", () => {
   )})
 
   it("has name label", () => {
-    screen.logTestingPlaygroundURL()
     expect(screen.getByTestId(/homevideo/i)).toBeInTheDocument
   })
+  
 })

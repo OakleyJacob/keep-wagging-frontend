@@ -3,7 +3,6 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Label, Input, FormG
 
 function SignUp({modal, toggle, signUp}) {
     const [conPassword, setConPassword] = useState('')
-   
     const [userInfo, setUserInfo] = useState({
         email:'',
         password:''

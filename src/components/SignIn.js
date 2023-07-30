@@ -12,9 +12,7 @@ function SignIn({modal, toggle, signIn, currentUser}) {
     const handleSubmit = () => {
  
         signIn({'user': {email:userInfo.email, password:userInfo.password}})
-   
-       
-    }
+   }
     useEffect(() => {
         if (currentUser != null){
             toggle()

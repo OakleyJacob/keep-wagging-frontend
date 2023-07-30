@@ -5,7 +5,7 @@ const Home = () => {
   return (
    <>
     <div className='home-page' >
-    <video data-testid = "homevideo" height = '100%' width = '100%' style = {{marginTop : '90px'}} src = {video} autoPlay loop muted/> 
+      <video data-testid = "homevideo" height = '100%' width = '100%' style = {{marginTop : '90px'}} src = {video} autoPlay loop muted/> 
     </div>
    </>
   )

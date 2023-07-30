@@ -23,10 +23,12 @@ describe("<Dog Index/>", () => {
   it("has a username", () => {
     expect(screen.getByRole('heading', { name: /victoria/i})).toBeInTheDocument()
   })
+  
   it("has age", () => {
     expect(screen.getByRole('heading', { name: /i am 7 doggy years old\./i
     })).toBeInTheDocument
   })
+  
   it("has button", () => {
     expect(screen.getAllByRole('link', { name: /click to love/i })).toBeInTheDocument
   })
