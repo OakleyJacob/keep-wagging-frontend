@@ -7,7 +7,7 @@ describe("<Header />", () => {
   beforeEach(() => {
     render(
      <BrowserRouter>
-        <Header />
+        <Header currentUser={null} />
      </BrowserRouter>
     )})
 

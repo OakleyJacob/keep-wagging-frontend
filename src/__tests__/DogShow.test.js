@@ -33,8 +33,7 @@ describe("<DogShow />", () => {
   })
 
   it("has vaccination status", () => {
-    screen.logTestingPlaygroundURL()
-    expect(screen.screen.getByText(/vaccinated: yes/i)).toBeInTheDocument()
+    expect(screen.getByText(/vaccinated: yes/i)).toBeInTheDocument()
   })
 
   it("has age", () => {
