@@ -137,7 +137,11 @@ form {
 .donations-form{
   display: flex;
   justify-content: center;
-  padding-top: 43%;
+  flex-direction: column;
+  padding-top: 25%;
+  width: 50%;
+  margin: auto;
+
 }
 
 .video{

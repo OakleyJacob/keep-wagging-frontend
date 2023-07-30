@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Nav, NavItem, NavLink } from 'reactstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHome, faDog, faPeopleGroup, faPlus } from '@fortawesome/free-solid-svg-icons'
+import { faHome, faDog, faPeopleGroup, faPlus, faHandHoldingDollar, faHandLizard } from '@fortawesome/free-solid-svg-icons'
 
 
 const Navigation = (props) => {
@@ -19,6 +19,9 @@ const Navigation = (props) => {
   }
   const goToDogNew = () => {
     navigate("/dognew")
+  }
+  const goToDonate = () => {
+    navigate("/donations")
   }
 
   return (
@@ -49,7 +52,11 @@ const Navigation = (props) => {
        {props.currentUser!== null?<> <NavItem>
            <NavLink data-testid='home-icon4' exact="true" activeclassname="active" onClick={goToDogNew}>
 
-           <FontAwesomeIcon icon={faPlus} style = {{margin:"auto"}} />
+           <FontAwesomeIcon icon={faPlus} style = {{width:"100%"}} />
+          </NavLink> 
+          <NavLink data-testid='home-icon5' exact="true" activeclassname="active" onClick={goToDonate}>
+
+          <FontAwesomeIcon icon={faHandHoldingDollar} style = {{width:"100%"}} color = 'green' />
           </NavLink> 
         </NavItem> </> :null}
       </Nav>

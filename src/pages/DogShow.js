@@ -36,10 +36,11 @@ const DogShow = (props) => {
           <CardText>
           Vaccinated: {selectedDog?.vaccination_status?'yes':'no'}
           </CardText>
+          {props.currentUser!== null?<>
           <Button color="success" onClick = {goToEdit}>Edit Dog</Button>
           <Link to = '/dogindex'>
           <Button color="success" onClick = {handleDelete} style = {{marginLeft: '87px'}}  >Adopt Me!</Button>
-          </Link>
+          </Link> </>:null}
         </CardBody>
       </Card>
       

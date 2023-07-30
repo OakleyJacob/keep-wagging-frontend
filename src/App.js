@@ -17,10 +17,12 @@ import Donations from './pages/Donations'
 
 const App = () => {
   const [dogs, setDogs] = useState()
+  const [donations, setDonations] = useState()
   const [currentUser, setCurrentUser] = useState(null)
 
   useEffect(() => {
     readDogs()
+    getDonations()
   }, [])
   
   const urlDeployed = "https://dogpoundheavenbackend.onrender.com"
@@ -134,7 +136,28 @@ const App = () => {
     .catch(error => console.log("log out errors: ", error))
 
   }
+  const getDonations = () => {
+    fetch(`${url}/donations`).then((response) => response.json())
+      .then((payload) => {
+        setDonations(payload.amount)
+        console.log(payload.amount);
+      })
+      .catch((error) => console.log(error))
 
+    }  
+    
+    const donate = (value) => {
+      fetch(`${url}/donations/${value}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type':'application/json'
+        }
+      })
+      .then((response) => response.json())
+      .then(() => getDonations())
+      .catch((error) => console.log(error))
+    }
+    
   return (
     <>
     <Header currentUser = {currentUser} signIn = {signIn} signUp = {signUp} signOut = {signOut}/>
@@ -142,11 +165,11 @@ const App = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/dogindex" element={<DogIndex dogs = {dogs} readDogs = {readDogs}/>} />
-      <Route path="/dogshow/:id" element={<DogShow dogs = {dogs} deleteDog = {deleteDog}/>} />
+      <Route path="/dogshow/:id" element={<DogShow dogs = {dogs} deleteDog = {deleteDog} currentUser = {currentUser}/>} />
       <Route path="/dognew" element={<DogNew createDog={createDog} />} />
       <Route path="/dogedit/:id" element={<DogEdit dogs = {dogs} editDog = {editDog}/>} />
       <Route path="/aboutus" element={<AboutUs />} />
-      <Route path="/donations" element={<Donations />} />
+      <Route path="/donations" element={<Donations donate = {donate} donations = {donations}/>} />
 
       <Route path="*" element={<NotFound />} />
     </Routes>
