@@ -27,8 +27,8 @@ const App = () => {
     getDonations()
   }, [])
   
-  const urlDeployed = "https://dogpoundheavenbackend.onrender.com"
-  const url = "http://localhost:3000"
+  const url = "https://dogpoundheavenbackend.onrender.com"
+  const url2 = "http://localhost:3000"
   
   
   const readDogs = () => {
