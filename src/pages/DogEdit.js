@@ -10,9 +10,11 @@ const DogEdit = (props) => {
   const [newDog, setNewDog] = useState(selectedDog)
   const handleChange = (e) => {
     if (e.target.name === "vaccination_status" && newDog?.vaccination_status) {
-      setNewDog({...newDog,[e.target.name]: false})    
+      setNewDog({...newDog,[e.target.name]: false}) 
+      console.log(newDog.vaccination_status)   
     } else if (e.target.name === "vaccination_status" && !newDog?.vaccination_status){
       setNewDog({...newDog,[e.target.name]: true}) 
+      console.log(newDog.vaccination_status)  
     } else {
       setNewDog({...newDog,[e.target.name]: e.target.value})
     }
@@ -69,6 +71,7 @@ const DogEdit = (props) => {
             name="vaccination_status"
             type="checkbox"
             onChange={handleChange}
+            checked = {newDog.vaccination_status?true:false}
           />
         </FormGroup>
         <FormGroup>

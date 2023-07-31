@@ -79,7 +79,6 @@ const App = () => {
 
   }
   const signUp = (userInfo) => {
-    console.log(userInfo)
     fetch(`${url}/signup`, {
       body: JSON.stringify(userInfo),
       headers: {
@@ -101,7 +100,6 @@ const App = () => {
 
   
   const signIn = (userInfo) => {
-    console.log(userInfo.email)
     fetch(`${url}/login`, {
       body: JSON.stringify(userInfo),
       headers: {
@@ -142,7 +140,6 @@ const App = () => {
     fetch(`${url}/donations`).then((response) => response.json())
       .then((payload) => {
         setDonations(payload.amount)
-        console.log(payload.amount);
       })
       .catch((error) => console.log(error))
 

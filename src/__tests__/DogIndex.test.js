@@ -9,6 +9,7 @@ describe("<Dog Index/>", () => {
   const readDogs = () => {
     return null
   }
+  
   beforeEach(() => {
     render(
     <BrowserRouter>

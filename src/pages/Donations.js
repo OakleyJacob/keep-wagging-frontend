@@ -15,7 +15,6 @@ const Donations = ({donate, donations}) => {
   }
   return (
     <div className='donations-form'>
-      {/* custom donation modal */}
       <Modal isOpen={modal} toggle={toggle} >
         <ModalHeader toggle={toggle}>Thanks!</ModalHeader>
         <ModalBody>
@@ -26,7 +25,7 @@ const Donations = ({donate, donations}) => {
             </Label>
             <Input
               name="name"
-              placeholder="Type Dog's Name Here"
+              placeholder=""
               type="number"
               onChange={handleChange}
               value={amount}

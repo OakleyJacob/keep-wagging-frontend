@@ -24,7 +24,7 @@ describe("<DogNew />", () => {
     expect(screen.getByText(/dog's age/i)).toBeInTheDocument
   })
   
-  it("has age fiel", () => {
+  it("has age field", () => {
     expect(screen.getByRole('spinbutton')).toBeInTheDocument
   })
 
