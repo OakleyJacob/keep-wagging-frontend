@@ -1,7 +1,7 @@
 import React from 'react'
 import '../AboutUs.css'
 import jacobpic from '../assets/Subject.jpg'
-import paulpic from '../assets/Untitled (15).jpg'
+import paulpic from '../assets/Untitled (14).jpg'
 import miguelpic from '../assets/Subject (1).jpg'
 
 const AboutUs = () => {
