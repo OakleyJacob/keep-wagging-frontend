@@ -7,17 +7,27 @@ describe("<Navigation />", () => {
   beforeEach(() => {
     render(
      <BrowserRouter>
-        <Navigation />
+        <Navigation/>
      </BrowserRouter>
      )})
 
     it("has dogs button", () => {
-      expect(screen.getByRole('button', {name: /dogs/i})).toBeInTheDocument
+      expect(screen.getByTestId('home-icon')).toBeInTheDocument
     })
+    
     it("has home button", () => {
-      expect(screen.getByRole('button', {name: /home/i})).toBeInTheDocument
+      expect(screen.getByTestId('home-icon2')).toBeInTheDocument
     })
+    
     it("has aboutus button", () => {
-      expect(screen.getByRole('button', {name: /aboutus/i})).toBeInTheDocument
+      expect(screen.getByTestId('home-icon3')).toBeInTheDocument
+    })
+    
+    it("has add dog button", () => {
+      expect(screen.getByTestId('home-icon4')).toBeInTheDocument
+    })
+
+    it("has donate button", () => {
+      expect(screen.getByTestId('home-icon5')).toBeInTheDocument
     })
 })

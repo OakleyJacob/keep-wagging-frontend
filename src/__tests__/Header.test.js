@@ -7,17 +7,15 @@ describe("<Header />", () => {
   beforeEach(() => {
     render(
      <BrowserRouter>
-        <Header />
+        <Header currentUser={null} />
      </BrowserRouter>
     )})
 
   it("renders without crashing", () => {
-    screen.logTestingPlaygroundURL()
       const headerPart = screen.getByRole('heading')
       expect(headerPart).toBeInTheDocument()
-  
   })
-
+  
   it("has sign up button", () => {
     expect(screen.getByRole('button', {name: /sign up/i})).toBeInTheDocument
   })

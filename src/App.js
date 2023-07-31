@@ -17,10 +17,14 @@ import Donations from './pages/Donations'
 
 const App = () => {
   const [dogs, setDogs] = useState()
+  const [donations, setDonations] = useState()
   const [currentUser, setCurrentUser] = useState(null)
+ 
+  const navigate = useNavigate()
 
   useEffect(() => {
     readDogs()
+    getDonations()
   }, [])
   
   const urlDeployed = "https://dogpoundheavenbackend.onrender.com"
@@ -75,7 +79,6 @@ const App = () => {
 
   }
   const signUp = (userInfo) => {
-    console.log(userInfo)
     fetch(`${url}/signup`, {
       body: JSON.stringify(userInfo),
       headers: {
@@ -97,7 +100,6 @@ const App = () => {
 
   
   const signIn = (userInfo) => {
-    console.log(userInfo.email)
     fetch(`${url}/login`, {
       body: JSON.stringify(userInfo),
       headers: {
@@ -132,21 +134,41 @@ const App = () => {
       setCurrentUser(null)
     })
     .catch(error => console.log("log out errors: ", error))
-
+    navigate('/')
   }
+  const getDonations = () => {
+    fetch(`${url}/donations`).then((response) => response.json())
+      .then((payload) => {
+        setDonations(payload.amount)
+      })
+      .catch((error) => console.log(error))
 
+    }  
+    
+    const donate = (value) => {
+      fetch(`${url}/donations/${value}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type':'application/json'
+        }
+      })
+      .then((response) => response.json())
+      .then(() => getDonations())
+      .catch((error) => console.log(error))
+    }
+    
   return (
     <>
     <Header currentUser = {currentUser} signIn = {signIn} signUp = {signUp} signOut = {signOut}/>
     <Navigation currentUser = {currentUser}/>
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/dogindex" element={<DogIndex dogs = {dogs}/>} />
-      <Route path="/dogshow/:id" element={<DogShow dogs = {dogs} deleteDog = {deleteDog}/>} />
+      <Route path="/dogindex" element={<DogIndex dogs = {dogs} readDogs = {readDogs}/>} />
+      <Route path="/dogshow/:id" element={<DogShow dogs = {dogs} deleteDog = {deleteDog} currentUser = {currentUser}/>} />
       <Route path="/dognew" element={<DogNew createDog={createDog} />} />
       <Route path="/dogedit/:id" element={<DogEdit dogs = {dogs} editDog = {editDog}/>} />
       <Route path="/aboutus" element={<AboutUs />} />
-      <Route path="/donations" element={<Donations />} />
+      <Route path="/donations" element={<Donations donate = {donate} donations = {donations}/>} />
 
       <Route path="*" element={<NotFound />} />
     </Routes>

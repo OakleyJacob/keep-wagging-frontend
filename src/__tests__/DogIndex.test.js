@@ -6,34 +6,31 @@ import {mockDogs} from '../assets/MockDog'
 
 
 describe("<Dog Index/>", () => {
+  const readDogs = () => {
+    return null
+  }
+  
   beforeEach(() => {
     render(
     <BrowserRouter>
-      <DogIndex dogs={mockDogs}/>
+      <DogIndex dogs={mockDogs} readDogs={readDogs}/>
     </BrowserRouter>
   )})
 
   it("has photo", () => {
-    expect(screen.getByRole('img', {
-      name: /photo of rocky/i
-    })).toBeInTheDocument()
+    expect(screen.getByRole('img', {name: /profile of a dog named julio/i})).toBeInTheDocument()
   })
 
-  it("has pa username", () => {
-    expect(screen.getByRole('heading', {
-      name: /name: rocky/i
+  it("has a username", () => {
+    expect(screen.getByRole('heading', { name: /victoria/i})).toBeInTheDocument()
+  })
+  
+  it("has age", () => {
+    expect(screen.getByRole('heading', { name: /i am 7 doggy years old\./i
     })).toBeInTheDocument
   })
-
-  it("has user description", () => {
-    expect(screen.getByText(/description: we can fill it later rocky/i)).toBeInTheDocument
-  })
-
-  it("has vaccination status", () => {
-    expect(screen.getAllByRole('heading', { name: /vaccinated: yes/i })).toBeInTheDocument
-  })
-
-  it("has age", () => {
-    expect(screen.getByRole('heading', { name: /age: 7/i })).toBeInTheDocument
+  
+  it("has button", () => {
+    expect(screen.getAllByRole('link', { name: /click to love/i })).toBeInTheDocument
   })
 })

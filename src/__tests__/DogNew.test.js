@@ -23,8 +23,8 @@ describe("<DogNew />", () => {
   it("has age label", () => {
     expect(screen.getByText(/dog's age/i)).toBeInTheDocument
   })
-
-  it("has species field", () => {
+  
+  it("has age field", () => {
     expect(screen.getByRole('spinbutton')).toBeInTheDocument
   })
 
@@ -32,15 +32,15 @@ describe("<DogNew />", () => {
     expect(screen.getByText(/dog's description/i)).toBeInTheDocument
   })
 
-  it("has description", () => {
+  it("has description field", () => {
     expect(screen.getByPlaceholderText(/describe your buddy here/i)).toBeInTheDocument
   })
 
-  it("has vaccination status", () => {
+  it("has vaccination label", () => {
     expect(screen.getByText(/check here if dog is vaccinated/i)).toBeInTheDocument
   })
 
-  it("has vaccination status", () => {
+  it("has vaccination field", () => {
     expect(screen.getByRole('checkbox')).toBeInTheDocument
   })
 

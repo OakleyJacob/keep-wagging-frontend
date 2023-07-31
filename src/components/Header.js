@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import SignUp from './SignUp';
 import SignIn from './SignIn'
-import { Nav, NavLink, NavItem } from 'reactstrap';
+import { Nav, NavLink, NavItem, Button } from 'reactstrap';
 
 const Header = (props) => {
   const [signUpModal, setSignUpModal] = useState(false);
-
   const toggleSignUp = () => setSignUpModal(!signUpModal);
   const [signInModal, setSignInModal] = useState(false);
-
   const toggleSignIn = () => setSignInModal(!signInModal);
    
   useEffect(() => {
@@ -27,19 +25,19 @@ const Header = (props) => {
         <Nav className='nav-header'>
           {props.currentUser === null?<>
           <NavItem>
-              <p className='sign-up'  active onClick={toggleSignUp}>
+              <Button className='sign-up' color="success" onClick={toggleSignUp}>
                 Sign Up
-              </p>
+              </Button >
           </NavItem>
           <NavItem>
-              <p className='sign-in' onClick={toggleSignIn}>
+              <Button className='sign-in' color="success" onClick={toggleSignIn}>
                 Sign In
-              </p>
+              </Button >
           </NavItem></>:
           <NavItem>
-              <p className='sign-in' onClick={props.signOut}>
+              <Button  className='sign-in' color="success" onClick={props.signOut}>
                 Sign Out
-              </p>
+              </Button >
           </NavItem>}
         </Nav>
       </h1>
