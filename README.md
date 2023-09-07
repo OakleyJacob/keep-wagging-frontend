@@ -1,70 +1,113 @@
-# Getting Started with Create React App
+# React.js Frontend with Rails API Integration
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This README provides an overview and instructions for setting up and using a React.js frontend application that communicates with a Ruby on Rails backend API. This application allows users to log in using Devise authentication and provides full CRUD functionality for interacting with a PostgreSQL database.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Prerequisites](#prerequisites)
+- [Getting Started](#getting-started)
+  - [Setting Up the Backend](#setting-up-the-backend)
+  - [Setting Up the Frontend](#setting-up-the-frontend)
+- [Usage](#usage)
+- [Folder Structure](#folder-structure)
+- [Contributing](#contributing)
+- [License](#license)
 
-### `yarn start`
+## Prerequisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Before you begin, ensure you have the following prerequisites installed:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) for the frontend.
+- [Ruby](https://www.ruby-lang.org/en/documentation/installation/) and [Ruby on Rails](https://rubyonrails.org/) for the backend.
+- [PostgreSQL](https://www.postgresql.org/) for the database.
+- [Devise](https://github.com/plataformatec/devise) gem for user authentication in the Rails backend.
 
-### `yarn test`
+## Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Setting Up the Backend
 
-### `yarn build`
+1. Clone the Rails backend repository:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```bash
+   git clone <backend-repo-url>
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Navigate to the backend directory:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```bash
+   cd <backend-directory>
+   ```
 
-### `yarn eject`
+3. Install gem dependencies:
+ 
+   bundle install
+  
+4. Set up the PostgreSQL database and configure the `config/database.yml` file with your database settings.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+5. Generate Devise user authentication:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   rails generate devise:install
+   rails generate devise User
+   rails db:migrate
+   
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+6. Start the Rails server:
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   rails server
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+Your Rails API is now running at `http://localhost:3000`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Setting Up the Frontend
 
-### Analyzing the Bundle Size
+1. Clone the React frontend repository:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+   git clone <frontend-repo-url>
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+2. Navigate to the frontend directory:
 
-### Advanced Configuration
+ 
+   cd <frontend-directory>
+  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+3. Install npm/yarn dependencies:
 
-### Deployment
+   
+   npm install
+   yarn install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+4. Open the `app.js` file and update the url endpoint to match your Rails backend URL.
 
-### `yarn build` fails to minify
+   const url = 'http://localhost:3000'; // Update this URL
+  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+5. Start the React development server:
+
+
+   npm start
+   yarn start
+
+Your React frontend is now running at `http://localhost:3001`.
+
+## Usage
+
+1. Open your web browser and visit `http://localhost:3001`.
+2. Sign up and log in to your application using Devise authentication.
+3. You can now perform CRUD operations on the data stored in the PostgreSQL database via the React frontend.
+
+## Demo
+
+This is a video of the development team that worked together on this app demoing our final product.
+
+https://www.youtube.com/watch?v=uLhmRD17Kbo
+
+## Contributing
+
+If you would like to contribute to this project, please follow our [contributing guidelines](CONTRIBUTING.md).
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
