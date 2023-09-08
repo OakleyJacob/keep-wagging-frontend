@@ -51,8 +51,18 @@ Before you begin, ensure you have the following prerequisites installed:
    rails generate devise User
    rails db:migrate
    ```
-
-6. Start the Rails server:
+## Database
+# Database Creation
+To create the database, run the following commands:
+```bash
+rails db:create
+```
+# Database Initialization
+To initialize the database with seed data (if applicable), run:
+```bash
+rails db:seed
+```
+# Start the Rails server:
 
   ```bash
    rails server
