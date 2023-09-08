@@ -30,13 +30,14 @@ Before you begin, ensure you have the following prerequisites installed:
 
    ```bash
    git clone https://github.com/OakleyJacob/keep-wagging-backend.git
-  ```
+     ```
+
 
 2. Navigate to the backend directory:
 
    ```bash
    cd keep-wagging-backend
-  ```
+    ```
 
 3. Install gem dependencies:
    
