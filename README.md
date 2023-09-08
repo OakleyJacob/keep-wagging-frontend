@@ -29,67 +29,67 @@ Before you begin, ensure you have the following prerequisites installed:
 1. Clone the Rails backend repository:
 
    ```bash
-   git clone <backend-repo-url>
+   git clone https://github.com/OakleyJacob/keep-wagging-backend.git
    ```
 
 2. Navigate to the backend directory:
 
    ```bash
-   cd <backend-directory>
+   cd keep-wagging-backend
    ```
 
 3. Install gem dependencies:
- 
+  ```bash
    bundle install
-  
+  ```
 4. Set up the PostgreSQL database and configure the `config/database.yml` file with your database settings.
 
 5. Generate Devise user authentication:
 
-
+  ```bash
    rails generate devise:install
    rails generate devise User
    rails db:migrate
-   
+   ```
 
 6. Start the Rails server:
 
-
+  ```bash
    rails server
-
+  ```
 
 Your Rails API is now running at `http://localhost:3000`.
 
 ## Setting Up the Frontend
 
 1. Clone the React frontend repository:
-
-   git clone <frontend-repo-url>
-
-
+  ```bash
+   git clone https://github.com/OakleyJacob/keep-wagging-frontend.git
+```
 2. Navigate to the frontend directory:
 
- 
-   cd <frontend-directory>
-  
+   ```bash
+   cd keep-wagging-frontend
+  ```
 
 3. Install npm/yarn dependencies:
 
-   
+     ```bash
    npm install
    yarn install
+```
 
 4. Open the `app.js` file and update the url endpoint to match your Rails backend URL.
-
+ ```bash
    const url = 'http://localhost:3000'; // Update this URL
-  
+  ```
 
 5. Start the React development server:
 
-
+ ```bash
    npm start
    yarn start
-
+```
 Your React frontend is now running at `http://localhost:3001`.
 
 ## Usage
